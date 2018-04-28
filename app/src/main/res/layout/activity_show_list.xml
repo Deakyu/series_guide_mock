@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    tools:context=".ShowListActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/showlist_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/show_list_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@+id/showlist_toolbar">
+
+        <ImageView
+            android:id="@+id/thumbnail_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/friends_thumbnail_crop"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/ramaining_showlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="234 Remaining NBC \u2022 Thu 8:00 PM"
+            android:textColor="#50ffffff"
+            android:textSize="12dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintLeft_toRightOf="@+id/thumbnail_img"/>
+
+        <TextView
+            android:id="@+id/showname_showlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Friends"
+            android:textColor="#fff"
+            android:textSize="18dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintLeft_toRightOf="@+id/thumbnail_img"
+            app:layout_constraintTop_toBottomOf="@+id/ramaining_showlist"
+            app:layout_constraintBottom_toTopOf="@+id/season_episode_showlist"/>
+
+        <TextView
+            android:id="@+id/season_episode_showlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="10x3 Episode 3"
+            android:textColor="#fff"
+            android:textSize="18dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintLeft_toRightOf="@+id/thumbnail_img"
+            app:layout_constraintTop_toBottomOf="@+id/showname_showlist"
+            app:layout_constraintBottom_toTopOf="@+id/episode_date_showlist"/>
+
+        <TextView
+            android:id="@+id/episode_date_showlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Oct 9, 2003"
+            android:textColor="#50ffffff"
+            android:textSize="12dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintLeft_toRightOf="@+id/thumbnail_img"
+            app:layout_constraintTop_toBottomOf="@+id/season_episode_showlist"
+            app:layout_constraintBottom_toBottomOf="@+id/thumbnail_img"/>
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
