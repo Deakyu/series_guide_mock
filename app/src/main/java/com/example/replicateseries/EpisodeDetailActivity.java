@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class EpisodeDetailActivity extends AppCompatActivity {
 
@@ -18,6 +19,13 @@ public class EpisodeDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_episode_detail);
+
+        // Get episode info from EpisodeListActivity
+        Bundle data = getIntent().getExtras();
+        Episode episode = data.getParcelable("episode");
+
+        System.out.println("EPISODE HERE:\n");
+        System.out.println(episode.toString());
 
         Toolbar episodeDetailToolbar = findViewById(R.id.episode_detail_toolbar);
         episodeDetailToolbar.setTitleTextColor(getColor(R.color.white));
@@ -30,6 +38,34 @@ public class EpisodeDetailActivity extends AppCompatActivity {
 
         // TODO: Use the below line to dynamically set title of a show
         // ab.setTitle("Your Title here");
+
+
+        // region Set TextView values from episode object
+        // Set values of texts here
+        TextView tv = findViewById(R.id.episode_name);
+        tv.setText(Integer.toString(episode.getEpisodeNumber()));
+
+        tv = findViewById(R.id.episode_date);
+        tv.setText(episode.getEpisodeDate().toString());
+
+        tv = findViewById(R.id.details_string);
+        tv.setText(episode.getEpisodeDetail());
+
+        tv = findViewById(R.id.edited_date);
+        tv.setText(episode.getLastEdited().toString());
+
+        tv = findViewById(R.id.rating);
+        tv.setText(Float.toString(episode.getRating()) + " " + episode.getNumVoters() + " votes");
+
+        tv = findViewById(R.id.guest_stars_detail);
+        tv.setText(implode(", ", episode.getGuestStars()));
+
+        tv = findViewById(R.id.directors_detail);
+        tv.setText(implode(", ", episode.getDirectors()));
+
+        tv = findViewById(R.id.writers_detail);
+        tv.setText(implode(", ", episode.getWriters()));
+        // endregion
     }
 
     @Override
@@ -50,5 +86,16 @@ public class EpisodeDetailActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu, menu);
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    public String implode(String delimiter, String[] str) {
+        StringBuilder sb = new StringBuilder();
+        for(int i=0 ; i<str.length ; i++) {
+            sb.append(str[i]);
+            if(i != str.length - 1) {
+                sb.append(delimiter);
+            }
+        }
+        return sb.toString();
     }
 }
