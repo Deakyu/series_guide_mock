@@ -25,7 +25,6 @@
         android:paddingBottom="20dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:background="@android:color/transparent"
         app:layout_constraintTop_toBottomOf="@+id/showlist_toolbar">
 
         <ImageView
@@ -44,7 +43,6 @@
             android:text="234 Remaining NBC \u2022 Thu 8:00 PM"
             android:textColor="#50ffffff"
             android:textSize="12dp"
-            android:background="@android:color/transparent"
             app:layout_constraintLeft_toRightOf="@+id/thumbnail_img"/>
 
         <TextView
@@ -56,7 +54,6 @@
             android:text="Friends"
             android:textColor="#fff"
             android:textSize="18dp"
-            android:background="@android:color/transparent"
             app:layout_constraintLeft_toRightOf="@+id/thumbnail_img"
             app:layout_constraintTop_toBottomOf="@+id/ramaining_showlist"
             app:layout_constraintBottom_toTopOf="@+id/season_episode_showlist"/>
@@ -70,7 +67,6 @@
             android:text="10x3 Episode 3"
             android:textColor="#fff"
             android:textSize="18dp"
-            android:background="@android:color/transparent"
             app:layout_constraintLeft_toRightOf="@+id/thumbnail_img"
             app:layout_constraintTop_toBottomOf="@+id/showname_showlist"
             app:layout_constraintBottom_toTopOf="@+id/episode_date_showlist"/>
@@ -84,7 +80,6 @@
             android:text="Oct 9, 2003"
             android:textColor="#50ffffff"
             android:textSize="12dp"
-            android:background="@android:color/transparent"
             app:layout_constraintLeft_toRightOf="@+id/thumbnail_img"
             app:layout_constraintTop_toBottomOf="@+id/season_episode_showlist"
             app:layout_constraintBottom_toBottomOf="@+id/thumbnail_img"/>

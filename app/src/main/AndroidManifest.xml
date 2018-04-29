@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowListActivity">
+        <activity
+            android:name=".ShowListActivity"
+            android:label="Shows">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,8 +30,26 @@
                 android:value=".ShowListActivity" />
 
         </activity>
-        <activity android:name=".EpisodeListActivity" />
-        <activity android:name=".SeasonListActivity" />
+
+        <activity
+            android:name=".SeasonListActivity"
+            android:label="Friends"
+            android:parentActivityName=".ShowListActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ShowListActivity" />
+        </activity>
+
+        <activity
+            android:name=".EpisodeListActivity"
+            android:label="Friends"
+            android:parentActivityName=".ShowListActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ShowListActivity" />
+        </activity>
 
     </application>
 
