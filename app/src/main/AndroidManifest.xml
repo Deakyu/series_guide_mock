@@ -19,18 +19,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Set proper value for label programmatically -->
-        <activity
-            android:name=".EpisodeDetailActivity"
-            android:label="Friends"
-            android:parentActivityName=".ShowListActivity">
-
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ShowListActivity" />
-
-        </activity>
-
         <activity
             android:name=".SeasonListActivity"
             android:label="Friends"
@@ -44,11 +32,23 @@
         <activity
             android:name=".EpisodeListActivity"
             android:label="Friends"
-            android:parentActivityName=".ShowListActivity">
+            android:parentActivityName=".SeasonListActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ShowListActivity" />
+                android:value=".SeasonListActivity" />
+        </activity>
+
+        <!-- Set proper value for label programmatically -->
+        <activity
+            android:name=".EpisodeDetailActivity"
+            android:label="Friends"
+            android:parentActivityName=".EpisodeListActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".EpisodeListActivity" />
+
         </activity>
 
     </application>

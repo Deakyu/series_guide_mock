@@ -32,7 +32,7 @@ public class ShowListActivity extends AppCompatActivity {
         wrapper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ShowListActivity.this, EpisodeDetailActivity.class);
+                Intent intent = new Intent(ShowListActivity.this, SeasonListActivity.class);
                 startActivity(intent);
             }
         });
