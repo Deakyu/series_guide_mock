@@ -35,15 +35,12 @@ public class EpisodeDetailActivity extends AppCompatActivity {
 
         ab.setBackgroundDrawable(new ColorDrawable(getColor(R.color.colorPurple)));
         ab.setDisplayHomeAsUpEnabled(true);
-
-        // TODO: Use the below line to dynamically set title of a show
-        // ab.setTitle("Your Title here");
-
+        ab.setTitle("Friends");
 
         // region Set TextView values from episode object
         // Set values of texts here
         TextView tv = findViewById(R.id.episode_name);
-        tv.setText(Integer.toString(episode.getEpisodeNumber()));
+        tv.setText("Episode " + Integer.toString(episode.getEpisodeNumber()));
 
         tv = findViewById(R.id.episode_date);
         tv.setText(episode.getEpisodeDate().toString());
@@ -72,7 +69,14 @@ public class EpisodeDetailActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.go_to_season:
+                int id = 1;
+                int seasonNumber = 1;
+                int numEpisodeWatched = 1;
+                int numTotalEpisodes = 18;
+                Season season = new Season(id, seasonNumber, numEpisodeWatched, numTotalEpisodes);
+
                 Intent intent = new Intent(EpisodeDetailActivity.this, SeasonListActivity.class);
+                intent.putExtra("season", season);
                 startActivity(intent);
                 return true;
             default:

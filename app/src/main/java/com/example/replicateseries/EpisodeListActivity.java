@@ -31,7 +31,7 @@ public class EpisodeListActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setBackgroundDrawable(new ColorDrawable(getColor(R.color.colorPurple)));
         ab.setDisplayHomeAsUpEnabled(true);
-
+        ab.setTitle("Friends");
 
         ConstraintLayout episodeListWrapper = findViewById(R.id.episode_list_wrapper);
         episodeListWrapper.setOnClickListener(new View.OnClickListener() {
